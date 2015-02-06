@@ -1,62 +1,90 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
   <style type="text/css">
-    * { font-family: 'Open Sans', sans-serif; }
-    h1 { text-align:center; }
-    table { margin:0 auto 0 auto; border: 2px solid purple;}
-    td {border: 2px solid purple;  height: 25px; width: 25px; text-align:center; }
+    * {
+      font-family: 'Open Sans', sans-serif;
+    }
+    h1 {
+      text-align:center;
+    }
+    table {
+      margin:0 auto 0 auto;
+      border: 2px solid purple;
+    }
+    td {
+      border: 2px solid purple; 
+      height: 25px;
+      width: 25px;
+      text-align:center;
+    }
   </style>
 
-  <script>
-   $(document).ready(function(){
-      $('td').on('click', function(){
-         var $cell = $(this);
-         $cell.text('o');
-         console.log("woo");
-      });
-   });
-  </script>
+<script type="text/javascript">
+/*
+  var message = "hello world";
 
-  </head>
+  if(true){
+    message = "hey " + message;  
+  } else {
+    message = "yo " + message;
+  }
+
+  var count = 10;
+  while(count > 0){
+    message = prependMessage(message);
+    count = count - 1;
+  }
+
+  function prependMessage (messageArgument) {
+    return "yo " + messageArgument;
+  }
+  
+  alert(message);
+  */
+
+  $(document).ready(function(){
+    var cells = $('td');
+    cells.on("click", function(){
+      var cell = $(this);
+      var text = cell.text();
+      text = $.trim(text);
+      if(text == 'x'){
+         cell.text("o");
+      }
+      else if(text == "o"){
+        cell.text("                     ");
+      }
+      else if(text == ""){
+        cell.text('x');
+      }
+    });
+  });
+
+
+</script>
+
+</head>
 <body>
   <h1>Tic Tac Toe</h1>
 
   <table cellspacing="0">
     <tr>
-      <td>
-        x
-      </td>
-      <td>
-        x
-      </td>
-      <td>
-        x 
-      </td>
+      <td></td>
+      <td></td>
+      <td></td>
     </tr>
     <tr>
-      <td>
-        x
-      </td>
-      <td>
-        x
-      </td>
-      <td>
-        x 
-      </td>
+      <td></td>
+      <td></td>
+      <td></td>
     </tr>
     <tr>
-      <td>
-        x
-      </td>
-      <td>
-        x
-      </td>
-      <td>
-        x 
-      </td>
+      <td></td>
+      <td></td>
+      <td></td>
     </tr>
   </table>
 </body>
