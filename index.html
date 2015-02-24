@@ -22,7 +22,7 @@
     }
   </style>
 
-<script type="text/javascript">
+  <script type="text/javascript">
 /*
   var message = "hello world";
 
@@ -46,21 +46,47 @@
   */
 
   $(document).ready(function(){
-    var cells = $('td');
+
+    this // this is the document
+
+    var cells = $('td'); // var tdarray = document.getElementsByTagName('TD');
     cells.on("click", function(){
+
       var cell = $(this);
       var text = cell.text();
       text = $.trim(text);
+      
+
       if(text == 'x'){
-         cell.text("o");
+        cell.text('o');
       }
-      else if(text == "o"){
-        cell.text("                     ");
+      else if(text == 'o') {
+        cell.text('');
       }
-      else if(text == ""){
+      else {
         cell.text('x');
       }
-    });
+
+
+
+
+
+
+
+
+/*
+
+     if(text == 'x'){
+       cell.text("o");
+     }
+     else if(text == "o"){
+      cell.text(" ");
+    }
+    else if(text == ""){
+      cell.text('x');
+    }
+    */
+  });
   });
 
 
